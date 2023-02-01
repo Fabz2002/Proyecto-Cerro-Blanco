@@ -1,4 +1,8 @@
 ---
+export interface Props {
+	copyright: string
+}
+const { copyright } = Astro.props
 ---
 
 <footer class="dashboard__footer" data-dark>
@@ -12,8 +16,7 @@
 		</a>
 	</div>
 	<p class="footer__copyright">
-		Copyright © 2023 Seaman House S.A.C. Todos los derechos son reservados.
-		Desarrollado por Fabrizio Diaz
+		{copyright}
 	</p>
 	<ul class="footer__options">
 		<li class="footer__items">

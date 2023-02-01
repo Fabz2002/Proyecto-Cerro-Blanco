@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+
+const items = [
+	{ nombre: 'Mision', href: './mision' },
+	{ nombre: 'Videos' },
+	{ nombre: 'Contactanos', href: './contactanos' }
+]
+const copy =
+	'Copyright © 2023 Seaman House S.A.C. Todos los derechos son reservados; Desarrollado por Fabrizio Diaz'
+---
+
+<Layout title="Salud con abejas">
+	<Navbar items={items} />
+	<main class="dashboard-abejas">
+		<section class="dashboard-abejas__sonVida">
+			<h2 class="sonVida__h2">Las abejas son más que miel</h2>
+			<h1 class="sonVida__h1">SON VIDA</h1>
+		</section>
+		<section class="dashboard-abejas__apiterapia">
+			<h2 class="apiterapia__h2">Apiterapia</h2>
+			<p class="apiterapia__p">
+				Es una terapia alternativa basada en elementos provenientes de las
+				colmenas de las abejas para prevenir y curar diversas enfermedades. Se
+				utilizan elementos como: miel, jalea real, pan de abeja, cera,
+				propóleos, veneno de abeja, larvas de zángano, abejas enteras, aire de
+				la colmena o el polen. A estos componentes, así como a componentes del
+				veneno de las abejas, se les atribuyen propiedades para acelera la cura
+				de enfermedades estimulando las defensas del organismo y mejorando a su
+				vez el estado de ánimo.
+			</p>
+		</section>
+		<section class="dashboard-abejas__apiturismo">
+			<h2 class="apiturismo__h2">Apiturismo</h2>
+			<p class="apiturismo__p">
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora. Lorem
+				ipsum dolor sit amet consectetur adipisicing elit. Omnis quibusdam
+				nesciunt cumque deleniti repellendus ex laboriosam ipsa quisquam
+				placeat, quo aliquid accusamus, consequuntur, accusantium nostrum est
+				dicta velit dignissimos earum.
+			</p>
+		</section>
+		<section class="dashboard-abejas__polen">
+			<h2 class="polen__h2">Polen</h2>
+			<p class="polen__p">
+				Las personas toman polen de abeja para el rendimiento atlético, la
+				fiebre del heno, el eccema, el estreñimiento, la obesidad y muchas otras
+				condiciones
+			</p>
+		</section>
+	</main>
+	<Footer copyright={copy} />
+</Layout>

@@ -3,18 +3,18 @@ import Layout from '../layouts/Layout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 
-import '../styles/main.scss'
-
 const itemsilos = [
 	{ nombre: 'Mision', href: 'mision' },
 	{ nombre: 'Videos' },
-	{ nombre: 'Contactanos' }
+	{ nombre: 'Contactanos', href: 'contactanos' }
 ]
+const copy =
+	'Copyright © 2023 Seaman House S.A.C. Todos los derechos son reservados; Desarrollado por Fabrizio Diaz'
 ---
 
 <Layout title="CerroBlanco">
+	<Navbar items={itemsilos} />
 	<main class="dashboard">
-		<Navbar items={itemsilos} />
 		<section class="dashboard__jardin">
 			<h1 class="jardin__TitleH1">
 				Jardin Botanico de plantas Medicinales en Cerro Blanco
@@ -102,7 +102,7 @@ const itemsilos = [
 							La perfecta manera de vivir la vida con juegos para todos los
 							gustos.
 						</p>
-						<a href="./Atracciones.html" class="disfruta__a">ATRACCIONES</a>
+						<a href="./Atracciones" class="disfruta__a">ATRACCIONES</a>
 					</div>
 				</div>
 				<div class="disfruta__Abejas">
@@ -113,9 +113,7 @@ const itemsilos = [
 						<p class="disfruta__p">
 							Conozca la gran importancia de las Abejas en el mundo.
 						</p>
-						<a href="./saludConAbejas.html" class="disfruta__a"
-							>SALUD CON ABEJAS</a
-						>
+						<a href="./saludConAbejas" class="disfruta__a">SALUD CON ABEJAS</a>
 					</div>
 				</div>
 				<div class="disfruta__Zoologico">
@@ -144,6 +142,6 @@ const itemsilos = [
 				</div>
 			</div>
 		</section>
-		<Footer />
 	</main>
+	<Footer copyright={copy} />
 </Layout>
