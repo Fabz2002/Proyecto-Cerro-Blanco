@@ -84,3 +84,54 @@
 		width: 42%;
 	}
 }
+
+.medio {
+	&__svg {
+		text-align: center;
+		width: 5rem;
+	}
+	&__svg:hover {
+		cursor: pointer;
+	}
+}
+
+@media (max-width: 1400px) {
+	.disfruta__contenedor {
+		max-width: 1280px;
+	}
+}
+@media (max-width: 1200px) {
+	.disfruta__contenedor {
+		max-width: 1140px;
+	}
+}
+@media (max-width: 992px) {
+	.disfruta {
+		&__TitleH2 {
+			font-size: 0.8rem;
+		}
+		&__contenedor {
+			max-width: 960px;
+		}
+		&__Atracciones,
+		&__Zoologico {
+			flex-direction: column;
+		}
+		&__Abejas,
+		&__Flora {
+			flex-direction: column !important;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.disfruta__contenedor {
+		max-width: 720px;
+	}
+}
+
+@media (max-width: 576px) {
+	.disfruta__contenedor {
+		max-width: 540px;
+	}
+}
