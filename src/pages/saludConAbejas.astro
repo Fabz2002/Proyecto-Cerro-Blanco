@@ -1,19 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.astro'
-
-const items = [
-	{ nombre: 'Mision', href: './mision' },
-	{ nombre: 'Videos' },
-	{ nombre: 'Contactanos', href: './contactanos' }
-]
-const copy =
-	'Copyright © 2023 Seaman House S.A.C. Todos los derechos son reservados; Desarrollado por Fabrizio Diaz'
 ---
 
 <Layout title="Salud con abejas">
-	<Navbar items={items} />
 	<main class="dashboard-abejas">
 		<section class="dashboard-abejas__sonVida">
 			<h2 class="sonVida__h2">Las abejas son más que miel</h2>
@@ -51,5 +40,4 @@ const copy =
 			</p>
 		</section>
 	</main>
-	<Footer copyright={copy} />
 </Layout>
