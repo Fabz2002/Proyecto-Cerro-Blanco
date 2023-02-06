@@ -1,0 +1,22 @@
+.dashboard__jardin {
+	background: url(/img/Welcome.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	background-color: var(--background-color);
+	position: relative;
+	overflow: hidden;
+}
+
+.jardin {
+	&__TitleH1 {
+		font-size: 3vw;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		top: 50%;
+		color: #f5f5f5e0;
+		font-weight: bold;
+	}
+}
