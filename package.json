@@ -9,10 +9,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy":"gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "astro": "^2.0.5"
+    "@astrojs/vercel": "^3.0.1",
+    "astro": "^2.0.6"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^5.50.0",
