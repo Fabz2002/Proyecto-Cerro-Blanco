@@ -1,3 +1,13 @@
 @use 'bases/reset';
 @use 'modules/Modules';
 @use 'utilities/Utilities';
+
+/* dark mode  */
+.dark-mode {
+	background-color: #192229;
+	color: #ffffff;
+}
+.dark-navBar {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: var(--main-color);
+}
