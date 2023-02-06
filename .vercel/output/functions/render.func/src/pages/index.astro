@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="CerroBlanco">
+	<main class="dashboard">
+		<section class="dashboard__jardin">
+			<h1 class="jardin__TitleH1">
+				Jardin Botanico de plantas Medicinales en Cerro Blanco
+			</h1>
+		</section>
+		<section class="dashboard__carrusel" data-dark>
+			<h2 class="carrusel__TitleH2">IMAGENES DESTACADAS</h2>
+			<div class="carrusel__slider">
+				<div class="slider__slides">
+					<div class="slides__slide active">
+						<img src="../../public/img/medicina.jpg" alt="flora" />
+						<a
+							class="slide__link"
+							target="_blank"
+							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
+					</div>
+					<div class="slides__slide">
+						<img src="../../public/img/apicola.jpg" alt="apicola" />
+						<a
+							class="slide__link"
+							target="_blank"
+							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
+					</div>
+					<div class="slides__slide">
+						<img src="../../public/img/mariposas.jpg" alt="cria de mariposas" />
+						<a
+							class="slide__link"
+							target="_blank"
+							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
+					</div>
+					<div class="slides__slide">
+						<img src="../../public/img/agua.jpg" alt="agua" />
+						<a
+							class="slide__link"
+							target="_blank"
+							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
+					</div>
+					<div class="slides__slide">
+						<img src="../../public/img/fogCollector.jpg" alt="fogCollector" />
+						<a
+							class="slide__link"
+							target="_blank"
+							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
+					</div>
+				</div>
+				<div class="slider__btns" data-dark>
+					<button class="btns__prev">&laquo;</button><button class="btns__next"
+						>&raquo;</button
+					>
+				</div>
+			</div>
+		</section>
+		<section class="dashboard__deportesDeAventuras">
+			<h2 class="deportesDeAventuras__TitleH2">Deportes de Aventuras</h2>
+			<section class="deportesDeAventuras__videoSection">
+				<div class="videoSection__Media">
+					<svg
+						class="Media__svg"
+						width="65"
+						height="76"
+						viewBox="0 0 65 76"
+						fill="none"
+						stroke="currentColor"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M2 3.35898L62 38L2 72.641L2 3.35898Z"
+							stroke="currentColor"
+							stroke-width="1.5"></path>
+					</svg>
+				</div>
+			</section>
+		</section>
+		<section class="dashboard__disfruta" data-dark>
+			<div class="disfruta__contenedor">
+				<h2 class="disfruta__TitleH2">
+					Disfruta un mundo lleno de vida y diversion
+				</h2>
+				<div class="disfruta__Atracciones">
+					<figure class="disfruta__contenedorImagenes">
+						<img class="disfruta__img" src="../../public/img/atraccion.jpg" />
+					</figure>
+					<div class="disfruta__descripcion">
+						<p class="disfruta__p">
+							La perfecta manera de vivir la vida con juegos para todos los
+							gustos.
+						</p>
+						<a href="./Atracciones" class="disfruta__a">ATRACCIONES</a>
+					</div>
+				</div>
+				<div class="disfruta__Abejas">
+					<figure class="disfruta__contenedorImagenes">
+						<img class="disfruta__img" src="../../public/img/abejas.jpg" />
+					</figure>
+					<div class="disfruta__descripcion">
+						<p class="disfruta__p">
+							Conozca la gran importancia de las Abejas en el mundo.
+						</p>
+						<a href="./saludConAbejas" class="disfruta__a">SALUD CON ABEJAS</a>
+					</div>
+				</div>
+				<div class="disfruta__Zoologico">
+					<figure class="disfruta__contenedorImagenes">
+						<img class="disfruta__img" src="../../public/img/zoo.jpg" />
+					</figure>
+					<div class="disfruta__descripcion">
+						<p class="disfruta__p">
+							Los animales son parte de la vida y es increible interactuar con
+							ellos.
+						</p>
+						<a href="#" class="disfruta__a">ZOOLOGICO</a>
+					</div>
+				</div>
+				<div class="disfruta__Flora">
+					<figure class="disfruta__contenedorImagenes">
+						<img class="disfruta__img" src="../../public/img/flora.jpg" />
+					</figure>
+					<div class="disfruta__descripcion">
+						<p class="disfruta__p">
+							La belleza de la naturaleza es total ya que la podemos percibir
+							con nuestros cinco sentidos
+						</p>
+						<a href="#" class="disfruta__a">NATURALEZA</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script>
+	const d = document
+	const $video = d.querySelector(
+		'.deportesDeAventuras__videoSection'
+	) as HTMLInputElement
+	const $nextBtn = d.querySelector('.btns__next'),
+		$prevBtn = d.querySelector('.btns__prev'),
+		$slides = d.querySelectorAll('.slides__slide')
+
+	let i = 0
+	const $media = d.querySelector('.Media__svg')
+	d.addEventListener('click', (e) => {
+		if (e.target === $prevBtn) {
+			e.preventDefault()
+			$slides[i].classList.remove('active')
+			i--
+
+			if (i < 0) {
+				i = $slides.length - 1
+			}
+
+			$slides[i].classList.add('active')
+		}
+
+		if (e.target === $nextBtn) {
+			e.preventDefault()
+			$slides[i].classList.remove('active')
+			i++
+
+			if (i >= $slides.length) {
+				i = 0
+			}
+
+			$slides[i].classList.add('active')
+		}
+		if (e.target === $media) {
+			$video.innerHTML = `<iframe width="100%" allow="autoplay"  height="100%" src="https://www.youtube.com/embed/nqye02H_H6I?autoplay=1&mute=1&loop=1" title="4K Relaxing Nature Sounds - Short Video Clips of Nature" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></video>`
+		}
+	})
+</script>

@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Navbar from '../components/Navbar.astro'
+
+const items = [
+	{ nombre: 'Mision', href: 'mision' },
+	{ nombre: 'Videos' },
+	{ nombre: 'Contactanos', href: 'contactanos' }
+]
+---
+
+<Layout title="contactanos">
+	<main class="dashboard-contactanos">
+		<img
+			class="dashboard-contactanos__img"
+			src="../../public/img/contacto.jpg"
+		/>
+		<section class="dashboard-contactanos__soon">
+			<div class="soon__titulo"><span class="titulo__span"></span></div>
+			<div class="soon__subtitulo">
+				Vive la experiencia de la <span class="subtitulo__span"></span>
+			</div>
+		</section>
+		<section class="dashboard-contactanos__info">
+			<h3 class="info__h3">Entérate de lo que estamos preparando</h3>
+			<div class="info__list">
+				<img class="info__img" src="svg/envelopeLight.svg" />
+				<ul class="info__details">
+					<li class="info__item info__item--white">Email</li>
+					<li class="info__item">comercial@cerroBlanco.pe</li>
+				</ul>
+			</div>
+			<div class="info__list">
+				<img class="info__img" src="svg/phoneLight.svg" />
+				<ul class="info__details">
+					<li class="info__item info__item--white">Teléfonos</li>
+					<li class="info__item">(+51) 962 128 870 /(+51) 913 120 858</li>
+				</ul>
+			</div>
+			<div class="info__list">
+				<img class="info__img" src="svg/FbLight.svg" />
+				<ul class="info__details">
+					<li class="info__item info__item--white">Facebook</li>
+					<li class="info__item">Seaman House</li>
+				</ul>
+			</div>
+		</section>
+		<audio
+			class="dashboard-contactanos__audio"
+			autoplay=""
+			controls=""
+			loop=""
+			preload="none"
+		>
+			<source src="/audio.mp3" type="audio/mp3" />
+		</audio>
+	</main>
+</Layout>
