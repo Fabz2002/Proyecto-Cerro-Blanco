@@ -57,6 +57,9 @@
 		transition: all 0.3s ease-in-out;
 		background-color: #000;
 	}
+	&__darkTheme-btn {
+		cursor: pointer;
+	}
 }
 
 @media screen and (max-width: 768px) {
