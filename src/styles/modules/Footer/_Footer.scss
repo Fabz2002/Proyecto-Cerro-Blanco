@@ -2,7 +2,7 @@
 	font-weight: 500;
 	color: var(--second-color);
 	display: grid;
-	grid-template-columns: 20rem 1fr 20rem;
+	grid-template-columns: 15rem 1fr 15rem;
 	grid-template-rows: 1fr;
 	grid-template-areas: 'logo centerMenu optionsMenu';
 	overflow: hidden;
@@ -26,8 +26,30 @@
 		text-align: center;
 	}
 	&__copyright {
-		font-size: 0.8rem;
+		font-size: 1rem;
 		text-align: center;
 		place-self: center;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.dashboard__footer {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.footer__copyright {
+		font-size: 0.7rem;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.dashboard__footer {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	.footer__copyright {
+		font-size: 0.5rem;
+		font-weight: bold;
+	}
+	.footer__logo {
+		width: 70px;
 	}
 }

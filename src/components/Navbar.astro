@@ -25,7 +25,7 @@ const { items } = Astro.props
 		{
 			items.map((item) => {
 				return (
-					<li class="Navbar__items-Menu">
+					<li class="navbar__items-Menu">
 						<a href={item.href}>{item.nombre}</a>
 					</li>
 				)
@@ -33,13 +33,13 @@ const { items } = Astro.props
 		}
 	</ul>
 	<ul class="navbar__options">
-		<li id="darkTheme-btn" class="navbar__items">
+		<li class="navbar__darkTheme-btn">
 			<a href="#"
 				><svg
 					class="item__svg"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 384 512"
-					style="width: 10px"
+					style="width: 15px"
 				>
 					<path
 						class="pat"
@@ -48,5 +48,28 @@ const { items } = Astro.props
 				></a
 			>
 		</li>
+		<li class="navbar__responsive-btn">
+			<span class="navbar__bar"></span>
+			<span class="navbar__bar"></span>
+			<span class="navbar__bar"></span>
+		</li>
 	</ul>
 </nav>
+
+<script>
+	const d = document
+	const $responsiveBtn = d.querySelector(
+		'.navbar__responsive-btn'
+	) as HTMLInputElement
+	const $navMenu = d.querySelector('.navbar__optionsMenu') as HTMLInputElement
+	$responsiveBtn.addEventListener('click', () => {
+		$responsiveBtn.classList.toggle('active')
+		$navMenu.classList.toggle('active')
+	})
+	d.querySelectorAll('.navbar__items-Menu').forEach((n) =>
+		n.addEventListener('click', () => {
+			$responsiveBtn.classList.remove('active')
+			$navMenu.classList.remove('active')
+		})
+	)
+</script>
