@@ -33,3 +33,33 @@
 		color: #fff;
 	}
 }
+
+@media screen and (max-width: 1200px) {
+	.dashboard-atracciones__atraccionesPorMenos {
+		min-height: 60vh;
+	}
+	.atraccionesPorMenos__h1 {
+		font-size: 3rem;
+	}
+	.atraccionesPorMenos__h2 {
+		font-size: 1rem;
+	}
+}
+
+// @media screen and (max-width: 795px) {
+// 	.atraccionesPorMenos__h1 {
+// 		font-size: 2rem;
+// 	}
+// }
+
+@media screen and (max-width: 570px) {
+	.atraccionesPorMenos__h1 {
+		font-size: 38px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.atraccionesPorMenos__h1 {
+		font-size: 28px;
+	}
+}

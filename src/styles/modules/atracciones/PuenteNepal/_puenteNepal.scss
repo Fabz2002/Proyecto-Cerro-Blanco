@@ -1,0 +1,35 @@
+.dashboard-atracciones {
+	&__puenteNepal {
+		background: url('/img/puenteNepal.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		min-height: 100vh;
+		background-color: var(--background-color);
+		position: relative;
+		overflow: hidden;
+		font-family: 'Barlow Semi Condensed', sans-serif;
+	}
+}
+
+.puenteNepal {
+	&__h2 {
+		font-size: 1.5vw;
+		position: absolute;
+		top: 30%;
+		line-height: 1;
+		text-align: center;
+		width: 100%;
+		font-weight: 500;
+		color: #fff;
+	}
+	&__h1 {
+		font-size: 4vw;
+		position: absolute;
+		top: 40%;
+		text-align: center;
+		width: 100%;
+		font-weight: 700;
+		color: #fff;
+	}
+}

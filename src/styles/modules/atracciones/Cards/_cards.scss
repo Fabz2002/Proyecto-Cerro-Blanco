@@ -66,3 +66,14 @@
 		transition: all 400ms ease;
 	}
 }
+
+@media screen and (max-width: 400px) {
+	.cards__h1 {
+		font-size: 38px;
+	}
+}
+@media screen and (max-width: 290px) {
+	.cards__h1 {
+		font-size: 28px;
+	}
+}
