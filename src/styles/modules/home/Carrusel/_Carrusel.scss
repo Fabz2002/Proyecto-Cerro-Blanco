@@ -10,7 +10,7 @@
 
 .carrusel {
 	&__TitleH2 {
-		font-size: 2vw;
+		font-size: 2rem;
 		font-weight: bold;
 		width: 100%;
 		text-align: center;
@@ -87,5 +87,23 @@
 	&__next:hover {
 		color: rgb(236, 234, 234);
 		transition: all 0.1s ease-in;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.carrusel__TitleH2 {
+		font-size: 1.6rem;
+	}
+}
+
+@media screen and (max-width: 795px) {
+	.carrusel__TitleH2 {
+		font-size: 25px;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.carrusel__TitleH2 {
+		font-size: 20px;
 	}
 }
