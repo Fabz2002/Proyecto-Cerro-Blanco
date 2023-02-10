@@ -33,3 +33,30 @@
 		color: #fed821;
 	}
 }
+
+@media (max-width: 1180px) {
+	.sonVida__h2 {
+		font-size: 3rem;
+	}
+	.sonVida__h1 {
+		font-size: 7rem;
+	}
+}
+
+@media (max-width: 680px) {
+	.sonVida__h2 {
+		font-size: 2.2rem;
+	}
+	.sonVida__h1 {
+		font-size: 5rem;
+	}
+}
+
+@media (max-width: 460px) {
+	.sonVida__h2 {
+		font-size: 1.7rem;
+	}
+	.sonVida__h1 {
+		font-size: 3.5rem;
+	}
+}
