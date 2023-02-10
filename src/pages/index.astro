@@ -10,50 +10,38 @@ import Layout from '../layouts/Layout.astro'
 			</h1>
 		</section>
 		<section class="dashboard__carrusel" data-dark>
-			<h2 class="carrusel__TitleH2">IMAGENES DESTACADAS</h2>
+			<div class="carrusel__descripcion">
+				<h2 class="carrusel__TitleH2">QUE ENCONTRARAS ?</h2>
+				<p class="carrusel__p">
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id laborum
+					repudiandae fugit dolore soluta dolorem ex corrupti ipsum corporis
+					libero! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Reprehenderit, similique!
+				</p>
+			</div>
 			<div class="carrusel__slider">
 				<div class="slider__slides">
-					<div class="slides__slide active">
-						<img src="./img/medicina.jpg" alt="flora" />
-						<a
-							class="slide__link"
-							target="_blank"
-							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
-					</div>
-					<div class="slides__slide">
-						<img src="./img/apicola.jpg" alt="apicola" />
-						<a
-							class="slide__link"
-							target="_blank"
-							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
-					</div>
-					<div class="slides__slide">
-						<img src="./img/mariposas.jpg" alt="cria de mariposas" />
-						<a
-							class="slide__link"
-							target="_blank"
-							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
-					</div>
-					<div class="slides__slide">
-						<img src="./img/agua.jpg" alt="agua" />
-						<a
-							class="slide__link"
-							target="_blank"
-							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
-					</div>
-					<div class="slides__slide">
-						<img src="./img/fogCollector.jpg" alt="fogCollector" />
-						<a
-							class="slide__link"
-							target="_blank"
-							href="https://www.facebook.com/SeamanHouseLanguage/"></a>
-					</div>
+					<img src="./img/medicina.jpg" alt="flora" class="slider__img" />
+					<img
+						src="./img/mariposas.jpg"
+						alt="cria de mariposas"
+						class="slider__img"
+					/>
+					<img src="./img/apicola.jpg" alt="abeja" class="slider__img" />
+					<img src="./img/agua.jpg" alt="agua" class="slider__img" />
+					<img
+						src="./img/fogCollector.jpg"
+						alt="fogCollector"
+						class="slider__img"
+					/>
 				</div>
-				<div class="slider__btns" data-dark>
-					<button class="btns__prev">&laquo;</button><button class="btns__next"
-						>&raquo;</button
-					>
-				</div>
+				<ul class="slider__btns">
+					<li class="btns__punto activo"></li>
+					<li class="btns__punto"></li>
+					<li class="btns__punto"></li>
+					<li class="btns__punto"></li>
+					<li class="btns__punto"></li>
+				</ul>
 			</div>
 		</section>
 		<section class="dashboard__deportesDeAventuras">
@@ -84,7 +72,11 @@ import Layout from '../layouts/Layout.astro'
 				</h2>
 				<div class="disfruta__Atracciones">
 					<figure class="disfruta__contenedorImagenes">
-						<img class="disfruta__img" src="./img/atraccion.jpg" />
+						<img
+							class="disfruta__img"
+							alt="atraccion"
+							src="./img/atraccion.jpg"
+						/>
 					</figure>
 					<div class="disfruta__descripcion">
 						<p class="disfruta__p">
@@ -96,7 +88,7 @@ import Layout from '../layouts/Layout.astro'
 				</div>
 				<div class="disfruta__Abejas">
 					<figure class="disfruta__contenedorImagenes">
-						<img class="disfruta__img" src="./img/abejas.jpg" />
+						<img class="disfruta__img" alt="abejas" src="./img/abejas.jpg" />
 					</figure>
 					<div class="disfruta__descripcion">
 						<p class="disfruta__p">
@@ -107,7 +99,7 @@ import Layout from '../layouts/Layout.astro'
 				</div>
 				<div class="disfruta__Zoologico">
 					<figure class="disfruta__contenedorImagenes">
-						<img class="disfruta__img" src="./img/zoo.jpg" />
+						<img class="disfruta__img" alt="granja" src="./img/zoo.jpg" />
 					</figure>
 					<div class="disfruta__descripcion">
 						<p class="disfruta__p">
@@ -119,7 +111,7 @@ import Layout from '../layouts/Layout.astro'
 				</div>
 				<div class="disfruta__Flora">
 					<figure class="disfruta__contenedorImagenes">
-						<img class="disfruta__img" src="./img/flora.jpg" />
+						<img class="disfruta__img" alt="Flores" src="./img/flora.jpg" />
 					</figure>
 					<div class="disfruta__descripcion">
 						<p class="disfruta__p">
@@ -173,5 +165,26 @@ import Layout from '../layouts/Layout.astro'
 		if (e.target === $media) {
 			$video.innerHTML = `<iframe width="100%" allow="autoplay"  height="100%" src="https://www.youtube.com/embed/nqye02H_H6I?autoplay=1&mute=1&loop=1" title="4K Relaxing Nature Sounds - Short Video Clips of Nature" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></video>`
 		}
+	})
+
+	const grande = document.querySelector('.slider__slides') as HTMLInputElement
+	const $slider = d.querySelector('.carrusel__slider') as HTMLInputElement
+	const punto = document.querySelectorAll('.btns__punto')
+	const colores = ['#b5cb19', '#00aeef', '#28D310', '#108FE7', '#DCE5EB']
+	punto.forEach((cadaPunto, i) => {
+		punto[i].addEventListener('click', () => {
+			let posicion = i
+			let operacion = posicion * -20
+			grande.style.transform = `translateX(${operacion}%)`
+			$slider.setAttribute(
+				'style',
+				`box-shadow:1em 1em 1em ${colores[i]}, -0.5em -1em 1em ${colores[i]}, inset 0 0 0 transparent, inset 0 0 0 transparent;`
+			)
+			punto.forEach((cadaPunto, i) => {
+				punto[i].classList.remove('activo')
+			})
+
+			punto[i].classList.add('activo')
+		})
 	})
 </script>

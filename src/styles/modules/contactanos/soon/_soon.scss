@@ -5,20 +5,18 @@
 }
 
 .soon {
-	&__titulo {
-		font-weight: 550;
-		font-size: 3.5rem;
-	}
 	&__subtitulo {
 		font-weight: lighter;
-		font-size: 3.4rem;
-		width: 30rem;
+		font-size: 4rem;
+		width: 35rem;
 		margin-bottom: 2.8rem;
+		margin-top: 1rem;
 	}
 }
 
 .subtitulo {
 	&__span {
 		color: #4aa500;
+		font-weight: bold;
 	}
 }

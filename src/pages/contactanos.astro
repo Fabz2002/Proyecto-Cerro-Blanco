@@ -13,7 +13,6 @@ const items = [
 	<main class="dashboard-contactanos">
 		<img class="dashboard-contactanos__img" src="./img/contacto.jpg" />
 		<section class="dashboard-contactanos__soon">
-			<div class="soon__titulo"><span class="titulo__span"></span></div>
 			<div class="soon__subtitulo">
 				Vive la experiencia de la <span class="subtitulo__span"></span>
 			</div>
@@ -24,14 +23,14 @@ const items = [
 				<img class="info__img" src="svg/envelopeLight.svg" />
 				<ul class="info__details">
 					<li class="info__item info__item--white">Email</li>
-					<li class="info__item">comercial@cerroBlanco.pe</li>
+					<li class="info__item">cesarlz@hotmail.com</li>
 				</ul>
 			</div>
 			<div class="info__list">
 				<img class="info__img" src="svg/phoneLight.svg" />
 				<ul class="info__details">
 					<li class="info__item info__item--white">Teléfonos</li>
-					<li class="info__item">(+51) 962 128 870 /(+51) 913 120 858</li>
+					<li class="info__item">(+51) 942 138 314 /(+51) 913 120 858</li>
 				</ul>
 			</div>
 			<div class="info__list">
@@ -53,3 +52,54 @@ const items = [
 		</audio>
 	</main>
 </Layout>
+
+<script>
+	const textDisplay = document.querySelector(
+		'.subtitulo__span'
+	) as HTMLInputElement
+	const phrases = ['Naturaleza', 'Flora', 'Fauna']
+	let i = 0
+	let j = 0
+	let currentPhrase: string[] = []
+	let isDeleting = false
+	let isEnd = false
+
+	function loop() {
+		isEnd = false
+		textDisplay.innerHTML = currentPhrase.join('')
+
+		if (i < phrases.length) {
+			if (!isDeleting && j <= phrases[i].length) {
+				currentPhrase.push(phrases[i][j])
+				j++
+				textDisplay.innerHTML = currentPhrase.join('')
+			}
+
+			if (isDeleting && j <= phrases[i].length) {
+				currentPhrase.pop(phrases[i][j])
+				j--
+				textDisplay.innerHTML = currentPhrase.join('')
+			}
+
+			if (j == phrases[i].length) {
+				isEnd = true
+				isDeleting = true
+			}
+
+			if (isDeleting && j === 0) {
+				currentPhrase = []
+				isDeleting = false
+				i++
+				if (i === phrases.length) {
+					i = 0
+				}
+			}
+		}
+		const spedUp = Math.random() * (80 - 50) + 50
+		const normalSpeed = Math.random() * (300 - 200) + 200
+		const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed
+		setTimeout(loop, time)
+	}
+
+	loop()
+</script>
