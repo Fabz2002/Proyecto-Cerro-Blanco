@@ -18,9 +18,17 @@
 		font-size: 4rem;
 		font-weight: bold;
 		width: 100%;
-		text-align: center;
 		color: #b5cb19;
 		margin: 1.8rem 0px 0px 0px;
+	}
+	&__TitleH4 {
+		font-family: program, sans-serif;
+		font-size: 15px;
+		font-weight: 500;
+		letter-spacing: 1.03px;
+		line-height: 20px;
+		text-transform: uppercase;
+		color: #235c77;
 	}
 	&__slider {
 		width: 90%;
@@ -37,12 +45,22 @@
 	}
 	&__p {
 		font-size: 1.2em;
-		text-align: center;
-		width: 50%;
+		min-width: 300px;
 		margin: 1rem auto;
 		font-family: program, sans-serif;
 		letter-spacing: -0.27px;
 		line-height: 27px;
+	}
+	&__descripcion {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 70px 50px 40px 6vw;
+	}
+	&__span {
+		display: inline-block;
+		border-bottom: 2px solid #235c77;
 	}
 }
 .slider {
@@ -127,7 +145,6 @@
 	}
 	.carrusel__p {
 		font-size: 1.1rem;
-		width: 33%;
 	}
 }
 @media screen and (max-width: 980px) {
@@ -142,7 +159,6 @@
 	}
 	.carrusel__p {
 		font-size: 1rem;
-		width: 33%;
 	}
 }
 
@@ -152,7 +168,6 @@
 	}
 	.carrusel__p {
 		font-size: 0.8rem;
-		width: 40%;
 		font-weight: bold;
 	}
 }

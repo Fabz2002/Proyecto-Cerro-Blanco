@@ -11,6 +11,9 @@ import Layout from '../layouts/Layout.astro'
 		</section>
 		<section class="dashboard__carrusel" data-dark>
 			<div class="carrusel__descripcion">
+				<h4 class="carrusel__TitleH4">
+					<span class="carrusel__span">Exposicion de Imagenes</span>
+				</h4>
 				<h2 class="carrusel__TitleH2">QUE ENCONTRARAS ?</h2>
 				<p class="carrusel__p">
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id laborum
@@ -170,7 +173,14 @@ import Layout from '../layouts/Layout.astro'
 	const grande = document.querySelector('.slider__slides') as HTMLInputElement
 	const $slider = d.querySelector('.carrusel__slider') as HTMLInputElement
 	const punto = document.querySelectorAll('.btns__punto')
+	const puntoActivo = document.querySelector(
+		'.btns__punto.activo'
+	) as HTMLInputElement
 	const colores = ['#b5cb19', '#00aeef', '#28D310', '#108FE7', '#DCE5EB']
+
+	const indice = (i: number) => {
+		return i
+	}
 	punto.forEach((cadaPunto, i) => {
 		punto[i].addEventListener('click', () => {
 			let posicion = i
@@ -182,9 +192,33 @@ import Layout from '../layouts/Layout.astro'
 			)
 			punto.forEach((cadaPunto, i) => {
 				punto[i].classList.remove('activo')
+				punto[i].setAttribute('style', `background-color:#ececec`)
 			})
 
 			punto[i].classList.add('activo')
+			punto[i].setAttribute('style', `background-color: ${colores[i]}`)
 		})
 	})
+	let inde: number = 0
+	setInterval(() => {
+		let pos = inde
+		let op = pos * -20
+		grande.style.transform = `translateX(${op}%)`
+		$slider.setAttribute(
+			'style',
+			`box-shadow:1em 1em 1em ${colores[inde]}, -0.5em -1em 1em ${colores[inde]}, inset 0 0 0 transparent, inset 0 0 0 transparent;`
+		)
+		punto.forEach((cadaPunto, i) => {
+			punto[i].classList.remove('activo')
+			punto[i].setAttribute('style', `background-color:#ececec`)
+			console.log('removiendo', i)
+			console.log('....')
+		})
+		punto[inde].classList.add('activo')
+		punto[inde].setAttribute('style', `background-color: ${colores[inde]}`)
+		inde++
+		if (inde === punto.length) {
+			inde = 0
+		}
+	}, 3500)
 </script>
