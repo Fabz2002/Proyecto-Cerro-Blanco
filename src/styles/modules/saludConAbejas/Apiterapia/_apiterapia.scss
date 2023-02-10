@@ -12,7 +12,7 @@
 }
 .apiterapia {
 	&__h2 {
-		font-size: 4vw;
+		font-size: 6rem;
 		position: absolute;
 		top: 5%;
 		right: 8%;
@@ -27,7 +27,39 @@
 		bottom: 13%;
 		width: 18rem;
 		text-align: justify;
-		font-size: 1.2rem;
 		color: #f5f5f5;
+		font-size: 19px;
+		font-weight: 500;
+		letter-spacing: -0.52px;
+		line-height: 23px;
+	}
+}
+
+@media (max-width: 1400px) {
+	.apiterapia__h2 {
+		font-size: 5.2rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.apiterapia__h2 {
+		font-size: 4.2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.apiterapia__p {
+		font-size: 16px;
+		line-height: 23px;
+		letter-spacing: -0.52px;
+	}
+}
+
+@media (max-width: 576px) {
+	.apiterapia__h2 {
+		font-size: 3.7rem;
+	}
+	.apiterapia__p {
+		width: auto;
 	}
 }

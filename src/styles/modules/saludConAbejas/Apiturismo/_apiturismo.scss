@@ -13,7 +13,7 @@
 
 .apiturismo {
 	&__h2 {
-		font-size: 4vw;
+		font-size: 6vw;
 		position: absolute;
 		top: 5%;
 		right: 8%;
@@ -24,11 +24,44 @@
 	}
 	&__p {
 		position: absolute;
-		right: 6%;
-		top: 13%;
+		left: 6%;
+		bottom: 13%;
 		width: 18rem;
 		text-align: justify;
-		font-size: 1.2rem;
 		color: #f5f5f5;
+		font-size: 19px;
+		font-weight: 500;
+		letter-spacing: -0.52px;
+		line-height: 23px;
+	}
+}
+
+@media (max-width: 1400px) {
+	.apiturismo__h2 {
+		font-size: 5.2rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.apiturismo__h2 {
+		font-size: 4.2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.apiturismo__p {
+		font-size: 16px;
+		line-height: 23px;
+		letter-spacing: -0.52px;
+	}
+}
+
+@media (max-width: 576px) {
+	.apiturismo__h2 {
+		font-size: 3.7rem;
+	}
+	.apiturismo__p {
+		width: auto;
+		left: 0%;
 	}
 }

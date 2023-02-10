@@ -12,12 +12,6 @@
 	/* justify-content: center; */
 	color: rgb(59, 59, 59);
 	align-items: center;
-	&__img {
-		position: absolute;
-		z-index: -1;
-		height: 100%;
-		width: 100vw;
-	}
 	&__audio {
 		visibility: hidden;
 	}
@@ -51,7 +45,7 @@
 }
 @media (max-width: 520px) {
 	.dashboard-contactanos section {
-		padding-left: 4rem;
+		padding-left: 2rem;
 	}
 	.soon__subtitulo {
 		font-size: 40px;
@@ -77,11 +71,11 @@
 }
 @media (max-width: 390px) {
 	.dashboard-contactanos section {
-		padding-left: 3rem;
+		padding-left: 1rem;
 	}
 	.soon__subtitulo {
-		font-size: 30px;
-		width: 15rem;
+		font-size: 25px;
+		width: 13rem;
 	}
 	.info__h3 {
 		font-size: 15px;
