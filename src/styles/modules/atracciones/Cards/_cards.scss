@@ -1,7 +1,6 @@
 .dashboard-atracciones {
 	&__cards {
 		min-height: 100vh;
-		// background-color: #d0d0d049;
 		width: 100%;
 		max-width: 1800px;
 		display: flex;
@@ -33,7 +32,7 @@
 		width: 100%;
 		text-align: center;
 		color: #ff8c00;
-		font-family: 'Barlow Semi Condensed', sans-serif;
+		margin-top: 1rem;
 	}
 }
 .cardItem {
@@ -47,6 +46,7 @@
 	}
 	&__cardTitle {
 		font-weight: 400;
+		font-size: 30px;
 		margin: 15px 0px;
 	}
 	&__cardDescription {

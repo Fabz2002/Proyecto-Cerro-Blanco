@@ -6,10 +6,25 @@
 }
 .disfruta {
 	&__TitleH2 {
-		font-weight: 800;
-		font-size: 1.6rem;
+		font-weight: bold;
+		font-size: 2.3rem;
 		text-align: center;
-		margin: 2rem;
+		margin: 10px 10px 2rem 10px;
+		color: #235c77;
+	}
+	&__TitleH4 {
+		font-family: program, sans-serif;
+		font-size: 15px;
+		font-weight: 500;
+		letter-spacing: 1.03px;
+		line-height: 20px;
+		text-transform: uppercase;
+		color: #b5cb19;
+		margin-top: 1rem;
+	}
+	&__span {
+		display: inline-block;
+		border-bottom: 2px solid #b5cb19;
 	}
 	&__contenedor {
 		display: flex;
