@@ -1,13 +1,16 @@
-.dashboard__carrusel {
+.dashboard__carruselVideos {
 	min-height: 100vh;
 	background-color: #ffffff;
 	position: relative;
 	overflow: hidden;
 	display: flex;
-
 	align-items: center;
+	background: url('/img/Picture1.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
-.carrusel {
+.carruselVideos {
 	&__TitleH2 {
 		font-size: 4rem;
 		font-weight: bold;
@@ -24,17 +27,17 @@
 		text-transform: uppercase;
 		color: #235c77;
 	}
-	&__slider {
-		width: 90%;
+	&__sliderVideos {
+		width: 100%;
 		max-width: 120em;
 		padding: 2em;
 		margin: 1.5rem 2rem;
 		color: #393939;
 		transition: all 0.4s ease;
 		border-radius: 1em;
-		background-color: #ececec;
-		box-shadow: 1em 1em 1em #b5cb19, -0.5em -1em 1em #b5cb19,
-			inset 0 0 0 transparent, inset 0 0 0 transparent;
+
+		// box-shadow: 1em 1em 1em #b5cb19, -0.5em -1em 1em #b5cb19,
+		// 	inset 0 0 0 transparent, inset 0 0 0 transparent;
 		overflow: hidden;
 	}
 	&__p {
@@ -43,6 +46,7 @@
 		font-family: program, sans-serif;
 		letter-spacing: -0.27px;
 		line-height: 27px;
+		color: #ffffff;
 	}
 	&__descripcion {
 		display: flex;
@@ -56,9 +60,9 @@
 		border-bottom: 2px solid #235c77;
 	}
 }
-.slider {
+.sliderVideos {
 	&__slides {
-		width: 500%;
+		width: 200%;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
@@ -66,13 +70,13 @@
 		color: #393939;
 		transition: all 0.4s ease;
 		border-radius: 1em;
-		background-color: #ececec;
-
+		// box-shadow: 1em 1em 2em #c9c9c9, -1em -1em 1em #ffffff,
+		// 	inset 0 0 0 transparent, inset 0 0 0 transparent;
 		padding: 2em;
 		transition: all 0.5s ease;
 		transform: translateX(0%);
 	}
-	&__btns {
+	&__btnsVideo {
 		width: 100%;
 		margin: 1em 0 0;
 		padding: 0.4em;
@@ -81,34 +85,20 @@
 		justify-content: center;
 		align-items: center;
 	}
-	&__img {
-		width: calc(100% / 5 - 6em);
-		max-height: 70vh;
+	&__video {
+		width: calc(100% / 2 - 3rem);
+		object-fit: cover;
 		color: #393939;
 		transition: all 0.4s ease;
 		border-radius: 1em;
 		background-color: #ececec;
-		box-shadow: 1em 1em 2em #c9c9c9, -1em -1em 2em #ffffff,
-			inset 0 0 0 transparent, inset 0 0 0 transparent;
+		// box-shadow: 1em 1em 2em #c9c9c9, -1em -1em 2em #ffffff,
+		// 	inset 0 0 0 transparent, inset 0 0 0 transparent;
 		margin: 0 !important;
 	}
 }
 
-.slide {
-	&__img {
-		width: calc(100% / 5 - 6em);
-		max-height: 70vh;
-		color: #393939;
-		transition: all 0.4s ease;
-		border-radius: 1em;
-		background-color: #ececec;
-		box-shadow: 1em 1em 2em #c9c9c9, -1em -1em 2em #ffffff,
-			inset 0 0 0 transparent, inset 0 0 0 transparent;
-		margin: 0 !important;
-	}
-}
-
-.btns {
+.btnsVideo {
 	&__punto {
 		width: 2em;
 		height: 2em;
@@ -120,69 +110,66 @@
 		box-shadow: 0.6em 0.6em 1.2em #c9c9c9, -0.6em -0.6em 1.2em #ffffff,
 			inset 0 0 0 transparent, inset 0 0 0 transparent;
 	}
-	&__punto.activo {
+	&__punto.active {
 		background-color: #b5cb19;
 	}
 }
 @media screen and (max-width: 1500px) {
-	.dashboard__carrusel {
-		flex-direction: column;
+	.dashboard__carruselVideos {
+		flex-direction: column-reverse;
 		justify-content: space-around;
 	}
-	.carrusel__slider {
+	.carruselVideos__sliderVideos {
 		width: 70%;
 	}
-	.carrusel__TitleH2 {
+	.carruselVideos__TitleH2 {
 		font-size: 3rem;
 	}
-	.carrusel__p {
+	.carruselVideos__p {
 		font-size: 1.1rem;
 	}
 }
 @media screen and (max-width: 980px) {
-	.carrusel__TitleH2 {
+	.carruselVideos__TitleH2 {
 		font-size: 2.5rem;
 	}
-	.carrusel__slider {
+	.carruselVideos__sliderVideos {
 		width: 80%;
 	}
-	.dashboard__carrusel {
+	.dashboard__carruselVideos {
 		justify-content: center;
 	}
-	.carrusel__p {
+	.carruselVideos__p {
 		font-size: 1rem;
 	}
 }
 
 @media screen and (max-width: 795px) {
-	.carrusel__TitleH2 {
+	.carruselVideos__TitleH2 {
 		font-size: 2rem;
 	}
-	.carrusel__p {
+	.carruselVideos__p {
 		font-size: 0.8rem;
 		font-weight: bold;
 	}
 }
 @media screen and (max-width: 600px) {
-	.slider__slides {
+	.sliderVideos__slides {
 		padding: 0;
 	}
-	.slider__img {
-		height: 250px;
-		width: calc(28% - 6em);
+	.sliderVideos__video {
+		height: 450px;
+		width: calc(100% / 2 - 3rem);
 	}
-	.carrusel__descripcion {
+	.carruselVideos__descripcion {
 		margin-bottom: 3rem;
 	}
 }
 @media screen and (max-width: 420px) {
-	// .slider__slides {
-	// 	height: 20rem;
-	// }
-	.carrusel__TitleH2 {
+	.carruselVideos__TitleH2 {
 		font-size: 26px;
 	}
-	.carrusel__slider {
+	.carruselVideos__sliderVideos {
 		width: 90%;
 	}
 }

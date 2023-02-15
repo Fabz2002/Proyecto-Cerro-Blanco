@@ -9,6 +9,44 @@ import Layout from '../layouts/Layout.astro'
 				Jardin Botanico de plantas Medicinales en Cerro Blanco
 			</h1>
 		</section>
+		<section class="dashboard__carruselVideos" data-dark>
+			<div class="carruselVideos__sliderVideos">
+				<div class="sliderVideos__slides">
+					<video
+						src="https://res.cloudinary.com/dlfowshtu/video/upload/v1676485139/deporte_b9mnnx.mp4"
+						width="100%"
+						height="100%"
+						autoplay="true"
+						loop="true"
+						controls
+						class="sliderVideos__video"></video>
+					<video
+						src="https://res.cloudinary.com/dlfowshtu/video/upload/v1676485139/deporte_b9mnnx.mp4"
+						width="100%"
+						height="100%"
+						autoplay="true"
+						loop="true"
+						controls
+						class="sliderVideos__video"></video>
+				</div>
+				<ul class="sliderVideos__btnsVideo">
+					<li class="btnsVideo__punto active"></li>
+					<li class="btnsVideo__punto"></li>
+				</ul>
+			</div>
+			<div class="carruselVideos__descripcion">
+				<h4 class="carruselVideos__TitleH4">
+					<span class="carruselVideos__span">Exposicion de Videos</span>
+				</h4>
+				<h2 class="carruselVideos__TitleH2">Que encontraras?</h2>
+				<p class="carruselVideos__p">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum atque
+					dolores blanditiis sapiente distinctio sit libero reiciendis impedit,
+					id laboriosam eius ipsam quia quaerat, voluptatibus delectus excepturi
+					esse modi maiores?
+				</p>
+			</div>
+		</section>
 		<section class="dashboard__carrusel" data-dark>
 			<div class="carrusel__descripcion">
 				<h4 class="carrusel__TitleH4">
@@ -24,6 +62,7 @@ import Layout from '../layouts/Layout.astro'
 					Reprehenderit, similique!
 				</p>
 			</div>
+
 			<div class="carrusel__slider">
 				<div class="slider__slides">
 					<img src="./img/medicina.jpg" alt="flora" class="slider__img" />
@@ -52,22 +91,13 @@ import Layout from '../layouts/Layout.astro'
 		<section class="dashboard__deportesDeAventuras">
 			<h2 class="deportesDeAventuras__TitleH2">Deportes de Aventuras</h2>
 			<section class="deportesDeAventuras__videoSection">
-				<div class="videoSection__Media">
-					<svg
-						class="Media__svg"
-						width="65"
-						height="76"
-						viewBox="0 0 65 76"
-						fill="none"
-						stroke="currentColor"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M2 3.35898L62 38L2 72.641L2 3.35898Z"
-							stroke="currentColor"
-							stroke-width="1.5"></path>
-					</svg>
-				</div>
+				<video
+					src="https://res.cloudinary.com/dlfowshtu/video/upload/v1676485139/deporte_b9mnnx.mp4"
+					width="100%"
+					height="100%"
+					autoplay="true"
+					loop="true"
+					controls></video>`
 			</section>
 		</section>
 		<section class="dashboard__disfruta" data-dark>
@@ -134,9 +164,6 @@ import Layout from '../layouts/Layout.astro'
 
 <script>
 	const d = document
-	const $video = d.querySelector(
-		'.deportesDeAventuras__videoSection'
-	) as HTMLInputElement
 	const $nextBtn = d.querySelector('.btns__next'),
 		$prevBtn = d.querySelector('.btns__prev'),
 		$slides = d.querySelectorAll('.slides__slide')
@@ -167,9 +194,6 @@ import Layout from '../layouts/Layout.astro'
 			}
 
 			$slides[i].classList.add('active')
-		}
-		if (e.target === $media) {
-			$video.innerHTML = `<iframe width="100%" allow="autoplay"  height="100%" src="https://www.youtube.com/embed/nqye02H_H6I?autoplay=1&mute=1&loop=1" title="4K Relaxing Nature Sounds - Short Video Clips of Nature" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></video>`
 		}
 	})
 
@@ -219,6 +243,52 @@ import Layout from '../layouts/Layout.astro'
 		inde++
 		if (inde === punto.length) {
 			inde = 0
+		}
+	}, 3500)
+
+	// -------------------------->
+	const grandeVideos = document.querySelector(
+		'.sliderVideos__slides'
+	) as HTMLInputElement
+	const $sliderVideos = d.querySelector(
+		'.carruselVideos__sliderVideos'
+	) as HTMLInputElement
+	const puntoVideos = document.querySelectorAll('.btnsVideo__punto')
+	const puntoActive = document.querySelector(
+		'.btnsVideos__punto.active'
+	) as HTMLInputElement
+
+	puntoVideos.forEach((cadapuntoVideos, i) => {
+		puntoVideos[i].addEventListener('click', () => {
+			let posicion = i
+			let operacion = posicion * -50
+			grandeVideos.style.transform = `translateX(${operacion}%)`
+			puntoVideos.forEach((cadapuntoVideos, i) => {
+				puntoVideos[i].classList.remove('activo')
+				puntoVideos[i].setAttribute('style', `background-color:#ececec`)
+			})
+
+			puntoVideos[i].classList.add('activo')
+			puntoVideos[i].setAttribute('style', `background-color: ${colores[i]}`)
+		})
+	})
+	let indec: number = 0
+	setInterval(() => {
+		let pos = indec
+		let op = pos * -50
+		grandeVideos.style.transform = `translateX(${op}%)`
+		puntoVideos.forEach((cadapuntoVideos, i) => {
+			puntoVideos[i].classList.remove('activo')
+			puntoVideos[i].setAttribute('style', `background-color:#ececec`)
+		})
+		puntoVideos[indec].classList.add('activo')
+		puntoVideos[indec].setAttribute(
+			'style',
+			`background-color: ${colores[indec]}`
+		)
+		indec++
+		if (indec === puntoVideos.length) {
+			indec = 0
 		}
 	}, 3500)
 </script>
