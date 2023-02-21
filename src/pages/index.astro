@@ -159,136 +159,143 @@ import Layout from '../layouts/Layout.astro'
 				</div>
 			</div>
 		</section>
+		<section class="dashboard__soon">
+			<h2 class="soon__TitleH2">COMING SOON</h2>
+			<figure class="soon__contenedorImagenes">
+				<img class="soon__img" alt="abejas" src="./img/soon1.jpg" />
+				<img class="soon__img" alt="abejas" src="./img/soon2.jpg" />
+			</figure>
+		</section>
 	</main>
-</Layout>
 
-<script>
-	const d = document
-	const $nextBtn = d.querySelector('.btns__next'),
-		$prevBtn = d.querySelector('.btns__prev'),
-		$slides = d.querySelectorAll('.slides__slide')
+	<script>
+		const d = document
+		const $nextBtn = d.querySelector('.btns__next'),
+			$prevBtn = d.querySelector('.btns__prev'),
+			$slides = d.querySelectorAll('.slides__slide')
 
-	let i = 0
-	const $media = d.querySelector('.Media__svg')
-	d.addEventListener('click', (e) => {
-		console.log(e.target)
-		if (e.target === $prevBtn) {
-			e.preventDefault()
-			$slides[i].classList.remove('active')
-			i--
+		let i = 0
+		const $media = d.querySelector('.Media__svg')
+		d.addEventListener('click', (e) => {
+			console.log(e.target)
+			if (e.target === $prevBtn) {
+				e.preventDefault()
+				$slides[i].classList.remove('active')
+				i--
 
-			if (i < 0) {
-				i = $slides.length - 1
+				if (i < 0) {
+					i = $slides.length - 1
+				}
+
+				$slides[i].classList.add('active')
 			}
 
-			$slides[i].classList.add('active')
-		}
+			if (e.target === $nextBtn) {
+				e.preventDefault()
+				$slides[i].classList.remove('active')
+				i++
 
-		if (e.target === $nextBtn) {
-			e.preventDefault()
-			$slides[i].classList.remove('active')
-			i++
+				if (i >= $slides.length) {
+					i = 0
+				}
 
-			if (i >= $slides.length) {
-				i = 0
+				$slides[i].classList.add('active')
 			}
+		})
 
-			$slides[i].classList.add('active')
-		}
-	})
+		const grande = document.querySelector('.slider__slides') as HTMLInputElement
+		const $slider = d.querySelector('.carrusel__slider') as HTMLInputElement
+		const punto = document.querySelectorAll('.btns__punto')
+		const puntoActivo = document.querySelector(
+			'.btns__punto.activo'
+		) as HTMLInputElement
+		const colores = ['#b5cb19', '#00aeef', '#28D310', '#108FE7', '#DCE5EB']
 
-	const grande = document.querySelector('.slider__slides') as HTMLInputElement
-	const $slider = d.querySelector('.carrusel__slider') as HTMLInputElement
-	const punto = document.querySelectorAll('.btns__punto')
-	const puntoActivo = document.querySelector(
-		'.btns__punto.activo'
-	) as HTMLInputElement
-	const colores = ['#b5cb19', '#00aeef', '#28D310', '#108FE7', '#DCE5EB']
+		punto.forEach((cadaPunto, i) => {
+			punto[i].addEventListener('click', () => {
+				let posicion = i
+				let operacion = posicion * -20
+				grande.style.transform = `translateX(${operacion}%)`
+				$slider.setAttribute(
+					'style',
+					`box-shadow:1em 1em 1em ${colores[i]}, -0.5em -1em 1em ${colores[i]}, inset 0 0 0 transparent, inset 0 0 0 transparent;`
+				)
+				punto.forEach((cadaPunto, i) => {
+					punto[i].classList.remove('activo')
+					punto[i].setAttribute('style', `background-color:#ececec`)
+				})
 
-	punto.forEach((cadaPunto, i) => {
-		punto[i].addEventListener('click', () => {
-			let posicion = i
-			let operacion = posicion * -20
-			grande.style.transform = `translateX(${operacion}%)`
+				punto[i].classList.add('activo')
+				punto[i].setAttribute('style', `background-color: ${colores[i]}`)
+			})
+		})
+		let inde: number = 0
+		setInterval(() => {
+			let pos = inde
+			let op = pos * -20
+			grande.style.transform = `translateX(${op}%)`
 			$slider.setAttribute(
 				'style',
-				`box-shadow:1em 1em 1em ${colores[i]}, -0.5em -1em 1em ${colores[i]}, inset 0 0 0 transparent, inset 0 0 0 transparent;`
+				`box-shadow:1em 1em 1em ${colores[inde]}, -0.5em -1em 1em ${colores[inde]}, inset 0 0 0 transparent, inset 0 0 0 transparent;`
 			)
 			punto.forEach((cadaPunto, i) => {
 				punto[i].classList.remove('activo')
 				punto[i].setAttribute('style', `background-color:#ececec`)
+				console.log('removiendo', i)
+				console.log('....')
 			})
+			punto[inde].classList.add('activo')
+			punto[inde].setAttribute('style', `background-color: ${colores[inde]}`)
+			inde++
+			if (inde === punto.length) {
+				inde = 0
+			}
+		}, 3500)
 
-			punto[i].classList.add('activo')
-			punto[i].setAttribute('style', `background-color: ${colores[i]}`)
+		// -------------------------->
+		const grandeVideos = document.querySelector(
+			'.sliderVideos__slides'
+		) as HTMLInputElement
+		const $sliderVideos = d.querySelector(
+			'.carruselVideos__sliderVideos'
+		) as HTMLInputElement
+		const puntoVideos = document.querySelectorAll('.btnsVideo__punto')
+		const puntoActive = document.querySelector(
+			'.btnsVideos__punto.active'
+		) as HTMLInputElement
+
+		puntoVideos.forEach((cadapuntoVideos, i) => {
+			puntoVideos[i].addEventListener('click', () => {
+				let posicion = i
+				let operacion = posicion * -50
+				grandeVideos.style.transform = `translateX(${operacion}%)`
+				puntoVideos.forEach((cadapuntoVideos, i) => {
+					puntoVideos[i].classList.remove('activo')
+					puntoVideos[i].setAttribute('style', `background-color:#ececec`)
+				})
+
+				puntoVideos[i].classList.add('activo')
+				puntoVideos[i].setAttribute('style', `background-color: ${colores[i]}`)
+			})
 		})
-	})
-	let inde: number = 0
-	setInterval(() => {
-		let pos = inde
-		let op = pos * -20
-		grande.style.transform = `translateX(${op}%)`
-		$slider.setAttribute(
-			'style',
-			`box-shadow:1em 1em 1em ${colores[inde]}, -0.5em -1em 1em ${colores[inde]}, inset 0 0 0 transparent, inset 0 0 0 transparent;`
-		)
-		punto.forEach((cadaPunto, i) => {
-			punto[i].classList.remove('activo')
-			punto[i].setAttribute('style', `background-color:#ececec`)
-			console.log('removiendo', i)
-			console.log('....')
-		})
-		punto[inde].classList.add('activo')
-		punto[inde].setAttribute('style', `background-color: ${colores[inde]}`)
-		inde++
-		if (inde === punto.length) {
-			inde = 0
-		}
-	}, 3500)
-
-	// -------------------------->
-	const grandeVideos = document.querySelector(
-		'.sliderVideos__slides'
-	) as HTMLInputElement
-	const $sliderVideos = d.querySelector(
-		'.carruselVideos__sliderVideos'
-	) as HTMLInputElement
-	const puntoVideos = document.querySelectorAll('.btnsVideo__punto')
-	const puntoActive = document.querySelector(
-		'.btnsVideos__punto.active'
-	) as HTMLInputElement
-
-	puntoVideos.forEach((cadapuntoVideos, i) => {
-		puntoVideos[i].addEventListener('click', () => {
-			let posicion = i
-			let operacion = posicion * -50
-			grandeVideos.style.transform = `translateX(${operacion}%)`
+		let indec: number = 0
+		setInterval(() => {
+			let pos = indec
+			let op = pos * -50
+			grandeVideos.style.transform = `translateX(${op}%)`
 			puntoVideos.forEach((cadapuntoVideos, i) => {
 				puntoVideos[i].classList.remove('activo')
 				puntoVideos[i].setAttribute('style', `background-color:#ececec`)
 			})
-
-			puntoVideos[i].classList.add('activo')
-			puntoVideos[i].setAttribute('style', `background-color: ${colores[i]}`)
-		})
-	})
-	let indec: number = 0
-	setInterval(() => {
-		let pos = indec
-		let op = pos * -50
-		grandeVideos.style.transform = `translateX(${op}%)`
-		puntoVideos.forEach((cadapuntoVideos, i) => {
-			puntoVideos[i].classList.remove('activo')
-			puntoVideos[i].setAttribute('style', `background-color:#ececec`)
-		})
-		puntoVideos[indec].classList.add('activo')
-		puntoVideos[indec].setAttribute(
-			'style',
-			`background-color: ${colores[indec]}`
-		)
-		indec++
-		if (indec === puntoVideos.length) {
-			indec = 0
-		}
-	}, 3500)
-</script>
+			puntoVideos[indec].classList.add('activo')
+			puntoVideos[indec].setAttribute(
+				'style',
+				`background-color: ${colores[indec]}`
+			)
+			indec++
+			if (indec === puntoVideos.length) {
+				indec = 0
+			}
+		}, 3500)
+	</script>
+</Layout>

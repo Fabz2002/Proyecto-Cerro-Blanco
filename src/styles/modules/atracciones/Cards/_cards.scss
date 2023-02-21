@@ -14,7 +14,7 @@
 .cards {
 	&__cardItem {
 		width: 330px;
-		height: 430px;
+		height: 450px;
 		border-radius: 8px;
 		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 		overflow: hidden;
@@ -47,7 +47,7 @@
 	&__cardTitle {
 		font-weight: 400;
 		font-size: 30px;
-		margin: 15px 0px;
+		margin: 11px 0px;
 	}
 	&__cardDescription {
 		line-height: 1.8;

@@ -1,0 +1,58 @@
+.dashboard__soon {
+	background-color: #b5cb19;
+	min-height: 100vh;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: 0;
+}
+
+.soon {
+	&__TitleH2 {
+		font-size: 3vw;
+		font-weight: bold;
+		width: 100%;
+		text-align: center;
+		color: #ffffff;
+		margin: 1rem 0.5rem;
+	}
+	&__contenedorImagenes {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40%;
+		text-align: center;
+	}
+	&__img {
+		// object-fit: cover;
+		width: 100%;
+		height: 400px;
+		margin: 1.1rem 2rem;
+	}
+}
+
+@media screen and (max-width: 1320px) {
+	.soon__contenedorImagenes {
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 980px) {
+	.soon__contenedorImagenes {
+		width: 70%;
+	}
+}
+
+// @media screen and (max-width: 795px) {
+// 	.deportesDeAventuras__TitleH2 {
+// 		font-size: 30px;
+// 	}
+// }
+
+@media screen and (max-width: 420px) {
+	.dashboard__soon {
+		justify-content: center;
+	}
+}
