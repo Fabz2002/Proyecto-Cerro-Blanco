@@ -172,6 +172,7 @@
 	.slider__img {
 		height: 250px;
 		width: calc(28% - 6em);
+		object-fit: cover;
 	}
 	.carrusel__descripcion {
 		margin-bottom: 3rem;
@@ -181,10 +182,14 @@
 	// .slider__slides {
 	// 	height: 20rem;
 	// }
-	.carrusel__TitleH2 {
-		font-size: 26px;
-	}
+	// .carrusel__TitleH2 {
+	// 	font-size: 26px;
+	// }
 	.carrusel__slider {
 		width: 90%;
+	}
+	.slider__btns {
+		display: none;
+		overflow: hidden;
 	}
 }
