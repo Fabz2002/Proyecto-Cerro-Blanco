@@ -31,6 +31,7 @@
 		max-width: 450px;
 		height: 400px;
 		margin: 1.1rem 2rem;
+		border-radius: 1rem;
 	}
 }
 
@@ -47,12 +48,6 @@
 		width: 70%;
 	}
 }
-
-// @media screen and (max-width: 795px) {
-// 	.deportesDeAventuras__TitleH2 {
-// 		font-size: 30px;
-// 	}
-// }
 
 @media screen and (max-width: 420px) {
 	.dashboard__soon {
