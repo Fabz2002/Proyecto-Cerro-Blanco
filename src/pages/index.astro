@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Comments from '../components/Comments.jsx'
 ---
 
 <Layout title="CerroBlanco">
@@ -241,6 +242,7 @@ import Layout from '../layouts/Layout.astro'
 				<img class="soon__img" alt="abejas" src="./img/soon2.jpg" />
 			</figure>
 		</section>
+		<Comments client:load />
 	</main>
 
 	<script>
@@ -252,7 +254,6 @@ import Layout from '../layouts/Layout.astro'
 		let i = 0
 		const $media = d.querySelector('.Media__svg')
 		d.addEventListener('click', (e) => {
-			console.log(e.target)
 			if (e.target === $prevBtn) {
 				e.preventDefault()
 				$slides[i].classList.remove('active')
@@ -316,8 +317,6 @@ import Layout from '../layouts/Layout.astro'
 			punto.forEach((cadaPunto, i) => {
 				punto[i].classList.remove('activo')
 				punto[i].setAttribute('style', `background-color:#ececec`)
-				console.log('removiendo', i)
-				console.log('....')
 			})
 			punto[inde].classList.add('activo')
 			punto[inde].setAttribute('style', `background-color: ${colores[inde]}`)
