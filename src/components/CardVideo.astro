@@ -1,0 +1,19 @@
+---
+interface Props {
+	title?: string
+	video?: string
+}
+const { title = 'title', video = '' } = Astro.props
+---
+
+<div class="videosContainer__container">
+	<figure class="videosContainer__videoContainer">
+		<video
+			class="videosContainer__video"
+			src={video}
+			autoplay=""
+			muted=""
+			loop=""></video>
+	</figure>
+	<h4 class="videosContainer__h4">{title}</h4>
+</div>

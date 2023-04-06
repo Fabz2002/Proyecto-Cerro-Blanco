@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro'
+import CardVideo from '../components/CardVideo.astro'
+---
+
+<Layout title="Cerro Blanco">
+	<main class="dashboard-videos">
+		<section class="dashboard-videos__cerro">
+			<div class="cerro__container">
+				<h2 class="cerro__TitleH2">Cerro Blanco</h2>
+				<p class="cerro__p">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elitess Tenetur
+					sequi placeat aut, fuga at optio sit neque maximes Eius sim sequia
+					fuga at optio sit neque maxime Eius sim si
+				</p>
+			</div>
+			<div class="cerro__videosContainer">
+				<CardVideo
+					title="Abejas"
+					video="https://res.cloudinary.com/dlfowshtu/video/upload/v1680825154/abejas_ctmgaz.mp4"
+				/>
+				<CardVideo
+					title="Deportes"
+					video="https://res.cloudinary.com/dlfowshtu/video/upload/v1676485139/deporte_b9mnnx.mp4"
+				/>
+				<CardVideo
+					title="Fauna"
+					video="https://res.cloudinary.com/dlfowshtu/video/upload/v1680825307/animal_bvtw04.mp4"
+				/>
+			</div>
+		</section>
+		<section class="dashboard-videos__vive">
+			<div class="vive__scroll">
+				<div class="scroll__LeftToRight">
+					<h3 class="scroll__h3">• VIVE LA NATURALEZA</h3>
+					<h3 class="scroll__h3">• VIVE LA NATURALEZA</h3>
+					<h3 class="scroll__h3">• VIVE LA NATURALEZA</h3>
+				</div>
+			</div>
+		</section>
+		<section class="dashboard-videos__videoContainer">
+			<video
+				class="videoContainer__video"
+				src="https://res.cloudinary.com/dlfowshtu/video/upload/v1680825096/video_zdn4o3.mp4"
+				autoplay=""
+				muted=""
+				loop=""
+				width="100%"></video>
+		</section>
+	</main>
+</Layout>
