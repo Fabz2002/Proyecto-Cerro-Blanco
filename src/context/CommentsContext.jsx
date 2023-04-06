@@ -1,12 +1,6 @@
 import { useState, useContext, createContext } from 'react'
 import { db } from '../../firebase.js'
-import {
-	doc,
-	setDoc,
-	collection,
-	getDocs,
-	QuerySnapshot
-} from 'firebase/firestore'
+import { doc, setDoc, collection, getDocs } from 'firebase/firestore'
 const commentsContext = createContext()
 export const useCommentsRegistered = () => {
 	const comContext = useContext(commentsContext)

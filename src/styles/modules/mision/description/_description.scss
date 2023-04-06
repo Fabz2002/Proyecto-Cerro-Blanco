@@ -1,0 +1,18 @@
+.dashboard-mision__description {
+	min-height: 30vh;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.description {
+	&__p {
+		text-align: center;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		font-family: 'Barlow Semi Condensed';
+		font-weight: 400;
+		max-width: 420px;
+	}
+}
