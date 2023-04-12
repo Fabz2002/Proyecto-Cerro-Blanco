@@ -82,6 +82,17 @@
 		text-align: center;
 		flex: 2 1 20%;
 	}
+	&__description {
+		display: block;
+		text-align: center;
+		font-family: program, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.22px;
+		line-height: 22px;
+		max-width: 430px;
+		margin: 0 auto 18px auto;
+	}
 	&__h6::after {
 		content: '';
 		display: block;
@@ -93,17 +104,6 @@
 		bottom: -17px;
 		left: 50%;
 		transform: translateX(-50%);
-	}
-	&__description {
-		display: block;
-		text-align: center;
-		font-family: program, sans-serif;
-		font-size: 16px;
-		font-weight: 400;
-		letter-spacing: 0.22px;
-		line-height: 22px;
-		max-width: 75%;
-		margin: 0 auto 18px auto;
 	}
 }
 

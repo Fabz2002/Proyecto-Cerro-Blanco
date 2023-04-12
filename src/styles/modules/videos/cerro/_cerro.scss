@@ -12,6 +12,7 @@
 		align-items: center;
 		gap: 2.5rem;
 		margin-bottom: 1rem;
+		margin-top: 4rem;
 	}
 	&__TitleH2 {
 		font-size: 3rem;
@@ -22,7 +23,8 @@
 		font-size: 1.125rem;
 		line-height: 1.75rem;
 		font-weight: 300;
-		max-width: 438px;
+		max-width: 480px;
+		padding-top: 1rem;
 	}
 	&__videosContainer {
 		display: flex;
@@ -72,10 +74,14 @@
 	}
 }
 
-// @media screen and (min-width: 1536px) {
-// 	.videosContainer {
-// 		&__videoContainer {
-// 			width: 100%;
-// 		}
-// 	}
-// }
+@media screen and (max-width: 490px) {
+	.cerro {
+		&__p {
+			font-size: 0.85rem;
+			padding-left: 0.2rem;
+			padding-right: 0.2rem;
+			max-width: 470px;
+			padding-top: 1rem;
+		}
+	}
+}

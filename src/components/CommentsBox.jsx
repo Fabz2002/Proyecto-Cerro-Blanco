@@ -28,7 +28,8 @@ function NoComments() {
 	return (
 		<div className="flex  w-full items-center justify-center  text-white ">
 			<p className="text-gray-500 text-2xl text-center self-center">
-				Deja tus comentarios 👇
+				Deja tus comentarios (Demorara en cargar por el exceso de comentarios
+				actualmente)👇
 			</p>
 		</div>
 	)

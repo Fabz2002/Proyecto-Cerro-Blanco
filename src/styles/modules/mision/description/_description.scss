@@ -9,10 +9,13 @@
 .description {
 	&__p {
 		text-align: center;
-		font-size: 1rem;
-		line-height: 1.5rem;
+		font-size: 3rem;
 		font-family: 'Barlow Semi Condensed';
 		font-weight: 400;
 		max-width: 420px;
+		text-transform: uppercase;
+	}
+	&__p:hover {
+		transform: scale(1.15);
 	}
 }
