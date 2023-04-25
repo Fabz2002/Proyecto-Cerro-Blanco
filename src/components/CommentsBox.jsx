@@ -19,7 +19,7 @@ function CommentsBox() {
 			className="h-[400px]  md:min-h-screen  w-full bg-center bg-cover opacity-80 bg-[url('../../img/CommentsBackground.jpg')] flex items-center justify-center flex-wrap
          "
 		>
-			{comments ? <CommentsSlider comments={comments} /> : <NoComments />}
+			{comments ? <CommentsSlider comments={comments} /> : <NoComments/>}
 		</section>
 	)
 }
