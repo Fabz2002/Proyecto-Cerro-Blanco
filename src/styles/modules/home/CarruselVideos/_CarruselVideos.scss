@@ -32,7 +32,7 @@
 		height: 80vw;
 		max-width: 120em;
 		padding: 2em;
-		margin: 1.5rem 2rem;
+		margin: 1rem 2rem;
 		color: #393939;
 		transition: all 0.4s ease;
 		border-radius: 1em;
@@ -181,5 +181,8 @@
 	.carruselVideos__TitleH4 {
 		font-size: 0.6rem;
 		color: #235c77;
+	}
+	.carruselVideos__TitleH2 {
+		font-size: 1.8rem;
 	}
 }
