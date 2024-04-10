@@ -2,7 +2,7 @@
 
 ## Description
 
-The `Cerro Blanco Project` is a responsive web application developed using Astro JS, React components, and the SASS preprocessor. This project was created as a practice to enter the world of freelancing.
+The `Cerro Blanco Project` is a responsive web application developed using Astro JS, React components, and the SASS preprocessor. This project was created to give information about apiculture , and some important things that people dont know about bees.
 
 The application uses Firebase for feedback collection, albeit with some limitations.
 
